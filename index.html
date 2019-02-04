@@ -1,4 +1,5 @@
 
+<!--
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
  <head>
@@ -16,3 +17,328 @@
 </table>
 </body>
 </html>
+-->
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Hamza Ikine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+                             <h5><em>Hey, I'm</em></h5><h1><p><strong>Hamza Ikine</strong></p></h1>
+								<span class="profile-image img-responsive pull-center"><img src="images/profile.png" alt="Hamza Ikine" /></span>
+								<ul class="icons">
+									<li><a href="https://twitter.com/hamzaikine" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://github.com/hamzaikine" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">About</a></li>
+								<li><a href="#work">Projects</a></li>
+								<li><a href="#Skills">Skills</a></li>
+								<li><a href="#contact">Contact</a></li>
+								<li><a href="#Blog">Blog</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								
+								<h1>Hamza Ikine</h1>
+								
+								</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">Projects</h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<p>Please visit my Github for latest projects I am working on. <a href="https://www.github.com/hamzaikine" class="icon fa-github"><span class="label">GitHub</span></a></p>
+							</article>
+
+						<!-- About -->
+							<article id="Skills">
+								<h2 class="major">Skills</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<p class="major">
+                               <p>Hello! I am a Philly based freelance developer. 
+								 I have received my bachelor's degree in Computer Science from Temple University in Philadelphia.
+								 <p>You can learn more about me at my LinkedIn account. <a href="https://www.linkedin.com/in/hamzaikine" class="icon fa-linkedin"><span class="label">LinkedIn</span></a>   
+						     	</p>
+								<p><h3>Python &amp; Flask</h3></p>
+								<p><h3>Java</h3></p>
+								<p><h3>HTML, CSS, &amp; Javascript</h3></p>
+								<p><h3>MYSQL</h3></p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<!-- 
+<form method="post" action="#">
+									<div class="field half first">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="special" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+ --> 
+                                 
+								
+							 <p>Find me at Twitter <a href="https://www.twitter.com/hamzaikine" class="icon fa-twitter"><span class="label">Twitter</span></a></p>
+								
+							</article>
+							
+							
+						<!-- Elements -->
+							<article id="Blog">
+								<h2 class="major">Blog</h2>
+								
+								<section>
+									<h3 class="major">Data structure with Python</h3>
+									<p>Below is the code to find the shortest path between two nodes using <em>Dijkstra algorithm</em>
+									</p>
+									<!-- 
+<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+ -->
+									<!-- 
+<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+ -->
+									<h4>Dijkstra's Algorithm</h4>
+									<pre><code>
+import sys
+
+class Vertex:
+
+    def __init__(self, node):
+        self.id = node
+        self.adjacent = {}
+        self.previous = None
+        self.visited = False
+        self.distance = sys.maxsize
+
+    def set_adjacent_node(self, neighbor, distance = 0):
+        self.adjacent[neighbor] = distance
+
+    def get_adjacent_nodes(self):
+        return self.adjacent.keys()
+
+
+    def set_previous(self, prev):
+        self.previous = prev
+
+    def get_id(self):
+        return self.id
+
+    def get_neighbor_distance(self, to):
+        return self.adjacent[to]
+
+    def set_distance(self, dist):
+         self.distance = dist
+
+    def get_distance(self):
+         return self.distance
+
+    def set_visited(self):
+        self.visited = True
+
+    def get_visited(self):
+        return self.visited
+
+
+    def __str__(self):
+        return str(self.id) + ' adjacent nodes: ' + str([x.id for x in self.adjacent])
+
+
+class Graph():
+
+    def __init__(self):
+        self.vertices_nodes = {}
+        self.num_vertices = 0
+        self.previous = None
+
+    def __iter__(self):
+        return iter(self.vertices_nodes.keys())
+
+    def __str__(self):
+        return str(list(self.vertices_nodes))
+
+    def add_vertex(self, node):
+        vertex = Vertex(node)
+        self.vertices_nodes[node] = vertex
+        return vertex
+
+    def add_edge(self, frm, to, dist):
+         if frm not in self.vertices_nodes:
+               self.add_vertex(frm)
+
+         if to not in self.vertices_nodes:
+               self.add_vertex(to)
+
+         self.vertices_nodes[frm].set_adjacent_node(self.vertices_nodes[to], dist)
+         self.vertices_nodes[to].set_adjacent_node(self.vertices_nodes[frm], dist)
+
+    def get_vertex(self,v):
+        if v in self.vertices_nodes:
+            return self.vertices_nodes[v]
+        else:
+            return None
+
+    def get_vertices(self):
+        return self.vertices_nodes.keys()
+
+
+def shortest(v, path):
+        if v.previous:
+            path.append(v.previous.get_id())
+            shortest(v.previous, path)
+        return
+
+
+import heapq
+
+def dijkstra(aGraph, start, target):
+    #print('''Dijkstra's shortest path''')
+    # Set the distance for the start node to zero
+    start.set_distance(0)
+
+    # Put tuple pair into the priority queue
+    unvisited_queue = [(v.get_distance(), v.get_id()) for v in aGraph.vertices_nodes.values()]
+    print(unvisited_queue)
+    heapq.heapify(unvisited_queue)
+
+    print(len(unvisited_queue))
+    while len(unvisited_queue):
+        # Pops a vertex with the smallest distance
+        uv = heapq.heappop(unvisited_queue)
+        current = uv[1]
+        # current is node id, need to get the vertex
+        g.get_vertex(current).set_visited()
+
+        # for next in v.adjacent:
+        for next in g.get_vertex(current).adjacent:
+
+            # if visited, skip
+            if next.visited:
+                continue
+            new_dist = g.get_vertex(current).get_distance() + g.get_vertex(current).get_neighbor_distance(next)
+
+
+            if new_dist < next.get_distance():
+                next.set_distance(new_dist)
+                next.set_previous(g.get_vertex(current))
+                print('updated : current = %s next = %s new_dist = %s' \
+                % (g.get_vertex(current).get_id(), next.get_id(), next.get_distance()))
+            else:
+                print('not updated : current = %s next = %s new_dist = %s' \
+                % (g.get_vertex(current).get_id(), next.get_id(), next.get_distance()))
+
+        # Rebuild heap
+        # 1. Pop every item
+        while len(unvisited_queue):
+            heapq.heappop(unvisited_queue)
+        # 2. Put all vertices not visited into the queue
+        unvisited_queue = [(v.get_distance(), v.get_id()) for v in aGraph.vertices_nodes.values() if not v.get_visited()]
+        heapq.heapify(unvisited_queue)
+
+
+if __name__ == '__main__':
+
+    g = Graph()
+
+    g.add_vertex('a')
+    g.add_vertex('b')
+    g.add_vertex('c')
+    g.add_vertex('d')
+    g.add_vertex('e')
+    g.add_vertex('f')
+
+    g.add_edge('a', 'b', 7)
+    g.add_edge('a', 'c', 9)
+    g.add_edge('a', 'f', 14)
+    g.add_edge('b', 'c', 10)
+    g.add_edge('b', 'd', 15)
+    g.add_edge('c', 'd', 11)
+    g.add_edge('c', 'f', 2)
+    g.add_edge('d', 'e', 6)
+    g.add_edge('e', 'f', 9)
+
+    print('Graph data:')
+    for v in g.vertices_nodes.values():
+        for w in v.get_adjacent_nodes():
+            vid = v.get_id()
+            wid = w.get_id()
+            print('( %s , %s, %3d)' % (vid, wid, v.get_neighbor_distance(w)))
+
+    print(g)
+    dijkstra(g, g.get_vertex('a'), g.get_vertex('e'))
+
+    target = g.get_vertex('e')
+    path = [target.get_id()]
+    shortest(target, path)
+    print("The shortest Path: %s" % path[::-1])
+
+</code></pre>
+								</section>
+
+							
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Hamza Ikine 2018.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
