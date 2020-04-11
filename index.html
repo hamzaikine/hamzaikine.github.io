@@ -54,7 +54,7 @@
             <h2 class="major">About</h2>
             <span class="image main"><img src="images/pic01.jpg" alt=""/></span>
 
-            <iframe src="Resume2.pdf" style="width: 100%;height: 700px;border: none;"></iframe>
+            <iframe src="hamza_resume.pdf" style="width: 100%;height: 700px;border: none;"></iframe>
 
         </article>
 
@@ -108,7 +108,7 @@
                 <h4>Intro</h4>
                 <p>In this tutorial, I will show you how to create a secure channel between two java applications
                     communicating through the new TLSv1.3.<br>
-                    The benefit of using TLSv1.3 is:
+                    The benefits of using TLSv1.3 are:
                 <ul>
                     <li>Authentication and Speed: Quickly authenticate the server and client identity.</li>
                     <li>Confidentiality: Encrypt data transmitted between the server and client.</li>
@@ -132,6 +132,7 @@
                     <span class="image main"><img src="images/TLSFullHandshake.png" alt="TLSFullHandshake"/></span>
                     In Short:
                 <ol>
+
                     <li>The ClientHello will contain shared random key,
                         and cryptographic parameters.</li>
                     <li>The ServerHello agrees to DH params, checks if client needs to authenticate,
@@ -139,7 +140,7 @@
                     <li> The client receives the ServerHello generates the master key
                         and responds with its authentication message(certificate) if requested.</li>
                     <li>Now both server and client have a master key to encrypt data application.</li>
-
+                   
                 </ol>
 
                      for more information visit: <a href="https://tools.ietf.org/html/rfc8446" ><span
@@ -147,8 +148,7 @@
                     or watch this video tutorial: <iframe width="560" height="315" src="https://www.youtube.com/embed/M-0qt6tdHzk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </p>
                 <h4>Let's get our hands dirty:</h4>
-                <p>First, we need to generate a keystore:
-                    To keep this tutorial short I will use the same keystore as a truststore for both client and server.<br>
+                <p>First, we need to generate a keystore:<br>
                     <code>
                         keytool -genkeypair -alias mykey -keystore mykeystore.p12 -storetype pkcs12
                         -storepass secretpass -validity 3650 -keysize 2048 -keyalg RSA
