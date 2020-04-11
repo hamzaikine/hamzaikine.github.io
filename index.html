@@ -110,8 +110,8 @@
                     communicating through the new TLSv1.3.<br>
                     The benefits of using TLSv1.3 are:
                 <ul>
-                    <li>Authentication: Authenticate the server and client identity.</li>
-                    <li>Confidentiality: Encrypt data transmited between the server and client.</li>
+                    <li>Authentication and Speed: Quickly authenticate the server and client identity.</li>
+                    <li>Confidentiality: Encrypt data transmitted between the server and client.</li>
                     <li>Data Integrity: Protect against data modification.</li>
                 </ul>
                 Since I am not a security expert I will not delve into the details of how TLS(<b>Transport Layer
@@ -121,22 +121,31 @@
                 which is a file that holds the application private key and public key(certificate)
                 and also a truststore which holds trusted certificates.
                 <p>If you are interested to learn more visit:<a href="https://docs.oracle.com/en/java/javase/11/security/java-secure-socket-extension-jsse-reference-guide.html#GUID-93DEEE16-0B70-40E5-BBE7-55C3FD432345" ><span
-                        class="label"> Java Secure Socket Extension (JSSE) Reference Guide</span></a>
+                        class="label"> Java Secure Socket Extension (JSSE) Reference Guide</span></a><br>
+
                 </p>
                 <h4>How it works:</h4>
-                <p>To keep this tutorial short I will generate only one keystore and use it as a truststore for both the
-                    server and the client.
-                    This is how it is going to work.
+                <p>
+                    This is how it is going to work. Unlike RSA that requires 4 steps to finish the handshake,
+                    TLSv1.3 uses diffie-Hellman Ephemral(DHE) to cut the time in half.
+                    Below is a figure showing the full TLS handshake:
+                    <span class="image main"><img src="images/TLSFullHandshake.png" alt="TLSFullHandshake"/></span>
+                    In Short:
                 <ol>
-                    <li>The client will request to connect to the server.</li>
-                    <li>The server will respond OK here is my public certificate.</li>
-                    <li>The client checks this certificate if it exists in the truststore, if if does, it sends its
-                        public certificate to the server else connection terminates.
-                    </li>
-                    <li>The server checks if the client certificate exists in its truststore, if it does an ssl session
-                        opens and the data is encrypted and sent between the server and client.
-                    </li>
+
+                    <li>The ClientHello will contain shared random key,
+                        and cryptographic parameters.</li>
+                    <li>The ServerHello agrees to DH params, checks if client needs to authenticate,
+                        then combines ClientHello with ServerHello to generate a master key. </li>
+                    <li> The client receives the ServerHello generates the master key
+                        and responds with its authentication message(certificate) if requested.</li>
+                    <li>Now both server and client have a master key to encrypt data application.</li>
+                   
                 </ol>
+
+                     for more information visit: <a href="https://tools.ietf.org/html/rfc8446" ><span
+                        class="label"> rfc8446</span></a>
+                    or watch this video tutorial: <iframe width="560" height="315" src="https://www.youtube.com/embed/M-0qt6tdHzk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </p>
                 <h4>Let's get our hands dirty:</h4>
                 <p>First, we need to generate a keystore:<br>
@@ -164,7 +173,7 @@
                     Note: We need to set setNeedClientAuth() to true in order to check the client identity.
                 </p>
                 <p>
-                    In the ClientTLS we use the same ciphersuite, port, and protocol to create a socket that
+                    In the ClientTLS we use the same cipher suite, port, and protocol to create a socket that
                     connects to the server local address (localhost) and port 8443.<br>
                     <script src="https://gist.github.com/hamzaikine/91e192d43475f4dec159728002a2b0e7.js"></script>
                 </p>
