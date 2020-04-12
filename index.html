@@ -24,12 +24,13 @@
         </div>
         <div class="content">
             <div class="inner">
-                <h4><em>Hey, I'm Hamza Ikine</em></h4>  
+                <h4><em>Hey, I'm Hamza Ikine</em></h4>
                 <span class="profile-image img-responsive pull-center"><img src="images/profile.png" alt="Hamza Ikine"/></span>
                 <ul class="icons">
                     <li><a href="https://twitter.com/hamzaikine" class="icon fa-twitter" target="_blank"><span
                             class="label">Twitter</span></a></li>
-                    <li><a href="https://github.com/hamzaikine" class="icon fa-github" target="_blank"><span class="label">GitHub</span></a>
+                    <li><a href="https://github.com/hamzaikine" class="icon fa-github" target="_blank"><span
+                            class="label">GitHub</span></a>
                     </li>
                 </ul>
             </div>
@@ -62,7 +63,8 @@
             <h2 class="major">Projects</h2>
             <span class="image main"><img src="images/pic02.jpg" alt=""/></span>
             <p>Visit my Github for latest projects I am working on.
-                <a href="https://www.github.com/hamzaikine" target="_blank" class="icon fa-github"><span class="label" >GitHub</span></a></p>
+                <a href="https://www.github.com/hamzaikine" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a>
+            </p>
         </article>
 
         <!-- About -->
@@ -73,7 +75,8 @@
             <p>Hello! I am a Philly based freelance software developer.
                 I have received my bachelor's degree in Computer Science from Temple University in Philadelphia.
             <p>You can learn more about me at my LinkedIn account. <a href="https://www.linkedin.com/in/hamzaikine"
-                                                                      class="icon fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a>
+                                                                      class="icon fa-linkedin" target="_blank"><span
+                    class="label">LinkedIn</span></a>
             </p>
             <p>
             <h3>Python &amp; Flask</h3></p>
@@ -92,8 +95,8 @@
 
             <p>Find me at: Twitter <a href="https://www.twitter.com/hamzaikine" class="icon fa-twitter" target="_blank"><span
                     class="label">Twitter</span></a> & Github <a href="https://www.github.com/hamzaikine"
-                                                                  class="icon fa-github" target="_blank"><span
-                class="label">GitHub</span></a></p>
+                                                                 class="icon fa-github" target="_blank"><span
+                    class="label">GitHub</span></a></p>
 
         </article>
 
@@ -103,7 +106,7 @@
             <h2 class="major">Blog</h2>
 
             <section>
-                <h3 >Client/Server using mutual TLSv1.3 in Java</h3>
+                <h3>Client/Server using mutual TLSv1.3 in Java</h3>
                 <h4>Intro</h4>
                 <p>In this tutorial, I will show you how to create a secure channel between two java applications
                     communicating through the new TLSv1.3.<br>
@@ -119,7 +122,9 @@
                 Both the server and client need to generate a keystore,
                 which is a file that holds the application private key and public key(certificate)
                 and also a truststore which holds trusted certificates.
-                <p>If you are interested to learn more visit:<a href="https://docs.oracle.com/en/java/javase/11/security/java-secure-socket-extension-jsse-reference-guide.html#GUID-93DEEE16-0B70-40E5-BBE7-55C3FD432345"  target="_blank"><span
+                <p>If you are interested to learn more visit:<a
+                        href="https://docs.oracle.com/en/java/javase/11/security/java-secure-socket-extension-jsse-reference-guide.html#GUID-93DEEE16-0B70-40E5-BBE7-55C3FD432345"
+                        target="_blank"><span
                         class="label"> Java Secure Socket Extension (JSSE) Reference Guide</span></a><br>
 
                 </p>
@@ -132,18 +137,24 @@
                     In Short:
                 <ol>
                     <li>The ClientHello will contain shared random key,
-                        and cryptographic parameters.</li>
+                        and cryptographic parameters.
+                    </li>
                     <li>The ServerHello agrees to DH params, checks if client needs to authenticate,
-                        then combines ClientHello with ServerHello to generate a master key. </li>
+                        then combines ClientHello with ServerHello to generate a master key.
+                    </li>
                     <li> The client receives the ServerHello generates the master key
-                        and responds with its authentication message(certificate) if requested.</li>
+                        and responds with its authentication message(certificate) if requested.
+                    </li>
                     <li>Now both server and client have a master key to encrypt data application.</li>
 
                 </ol>
 
-                     for more information visit: <a href="https://tools.ietf.org/html/rfc8446" target="_blank"><span
-                        class="label"> rfc8446</span></a>
-                    or watch this video tutorial: <br><br><iframe width="360" height="315" src="https://www.youtube.com/embed/M-0qt6tdHzk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                for more information visit: <a href="https://tools.ietf.org/html/rfc8446" target="_blank"><span
+                    class="label"> rfc8446</span></a>
+                or watch this video tutorial: <br><br>
+                <iframe width="360" height="315" src="https://www.youtube.com/embed/M-0qt6tdHzk" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </p>
                 <h4>Let's get our hands dirty:</h4>
                 <p>First, we need to generate a keystore:
@@ -153,7 +164,8 @@
                         -storepass secretpass -validity 3650 -keysize 2048 -keyalg RSA
                     </code>
                     <br>To learn more about keytool command and options visit:
-                    <a href="https://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html#KeyStoreImplementation" target="_blank"><span
+                    <a href="https://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html#KeyStoreImplementation"
+                       target="_blank"><span
                             class="label"> Keytool keystore implementation</span></a>
                     <br>
                 <p>Second, we create two java projects one called ServerTLS and the other one ClientTLS
@@ -177,14 +189,16 @@
                     <script src="https://gist.github.com/hamzaikine/91e192d43475f4dec159728002a2b0e7.js"></script>
                 </p>
 
-                <p>Find both ServerTLS and ClientTLS projects at:
-                    <a href="https://github.com/hamzaikine/ServerTLS" target="_blank" ><span
+                <p>Clone both ServerTLS and ClientTLS projects from:
+                    <a href="https://github.com/hamzaikine/ServerTLS" target="_blank"><span
                             class="label"> ServerTLS</span></a>
                     & <a href="https://github.com/hamzaikine/ClientTLS" target="_blank"><span
                             class="label"> ClientTLS</span></a>
+                Then run ServerTLS first to start listening for incoming request,
+                    and after that run ClientTLS.
+                    At this moment, every message sent and received between the server and client is encrypted.
                 </p>
-
-                <p>I hope this short tutorial helped you understand TLS. Good Luck</p>
+                <p>I hope this short tutorial helped you understand TLS. Good Luck.</p>
 
 
             </section>
