@@ -39,8 +39,7 @@
 			            <li class="list-inline-item"><a href="https://twitter.com/hamzaikine"><i class="fab fa-twitter fa-fw"></i></a></li>
 			            <li class="list-inline-item"><a href="https://www.linkedin.com/in/hamzaikine"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
 			            <li class="list-inline-item"><a href="https://github.com/hamzaikine"><i class="fab fa-github-alt fa-fw"></i></a></li>
-<!-- 			            <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
-			            <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li> -->
+
 			        </ul><!--//social-list-->
 			        <hr> 
 				</div><!--//profile-section-->
@@ -49,24 +48,31 @@
 					<li class="nav-item active">
 					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i> Home <span class="sr-only">(current)</span></a>
 					</li>
-				<!-- 	<li class="nav-item">
-					    <a class="nav-link" href="blog-post.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
-					</li> -->
 					<li class="nav-item">
 					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
 					</li>
 				</ul>
 				
+				                 <!-- Dark mode toggle -->
+								<div class="one-quarter" id="switch">
+								  <input type="checkbox" class="checkbox" id="theme" />
+								  <label class="label" for="theme">
+								      <i class="fas fa-moon"></i>
+								      <i class="fas fa-sun"></i>
+								      <div class="ball"></div>
+								  </label>
+								</div>	
+
 			</div>
 		</nav>
     </header>
     
     <div class="main-wrapper">
-	    <section class="cta-section theme-bg-light py-5">
+	    <section class="cta-section py-5">
 		    <div class="container text-center">
-		    	<figure><img class="img-fluid" src="assets/images/Philly.jpeg" alt="image"></figure>
-			    <h2 class="heading">Technology For Good.</h2>
-			    <div class="intro">Welcome to my blog.</div>
+		    	<figure><img class="img-fluid" src="assets/images/philly.jpeg" alt="image"></figure>
+			    <h2 class="heading blog-list">Technology For Good.</h2>
+			    <div class="intro blog-list">Welcome to my blog.</div>
 			    
 		    </div><!--//container-->
 	    </section>
@@ -76,7 +82,7 @@
 				    <div class="media">
 					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/increase-appetite.jpeg" alt="image">
 					    <div class="media-body">
-						    <h3 class="title mb-1"><a href="blog-post.html">A Guide to Boosting Your Appetite: Tips and Supplements You Need to Know</a></h3>
+						    <h3 class="title mb-1"><a href="blog-post.html"><span class="blog-list"> A Guide to Boosting Your Appetite: Tips and Supplements You Need to Know </span></a></h3>
 						    <div class="meta mb-1"><span class="date">Published on 24 April 2023</span></div>
 						    <div class="intro">Appetite refers to the desire to eat, and it is an important bodily function that helps us maintain our health by providing the necessary nutrients and energy needed for our bodies to function properly....</div>
 						    <a class="more-link" href="blog-post.html">Read more &rarr;</a>
@@ -88,7 +94,7 @@
 				    <div class="media">
 					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-2.jpg" alt="image">
 					    <div class="media-body">
-						    <h3 class="title mb-1"><a href="blog-post.html">A Guide to Becoming a Full-Stack Developer</a></h3>
+						    <h3 class="title mb-1"><a href="blog-post.html"><span class="blog-list">A Guide to Becoming a Full-Stack Developer</span></a></h3>
 						    <div class="meta mb-1"><span class="date">Published 3 months ago</span></div>
 						    <div class="intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies...</div>
 						    <a class="more-link" href="blog-post.html">Read more &rarr;</a>
@@ -123,7 +129,8 @@
     <script src="assets/plugins/jquery-3.3.1.min.js"></script>
     <script src="assets/plugins/popper.min.js"></script> 
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
-
+    <script src="assets/js/dark-mode.js"></script>
+    
    
     
 
