@@ -1,6 +1,5 @@
 
 	// changing the main page background
-	const mw = document.querySelector('.main-wrapper');
 	const heading = document.querySelectorAll('.blog-list');
 	// listen to change in toggle
 	const toggle = document.querySelector('.checkbox');
@@ -21,16 +20,16 @@
    function toggleTheme() {
 
      	if (toggle.checked){
-            mw.setAttribute('class', 'main-wrapper theme-bg-dark');
             for (let i = 0; i < heading.length; i++) {
             	 heading[i].style.color = "white"
+               heading[i].style.backgroundColor = "black"
             }
 
 
      	} else {
-     		mw.setAttribute('class', 'main-wrapper theme-bg-light'); 
      		     for (let i = 0; i < heading.length; i++) {
             	 heading[i].style.color = "black"
+               heading[i].style.backgroundColor = "white"
             } 
      	}
 
