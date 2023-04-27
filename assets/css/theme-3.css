@@ -3875,13 +3875,13 @@ input[type='http://www.w3.org/2000/svg'].btn-block, input[type='0 0 8 8'].btn-bl
 }
 
 .nav-tabs .nav-link.disabled {
-    color: "white";
+    color: #767575;
     background-color: transparent;
     border-color: transparent
 }
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    color: "white";
+    color: #5c5c5c;
     background-color: #fff;
     border-color: #a9a8a8 #a9a8a8 #fff
 }
@@ -3897,7 +3897,7 @@ input[type='http://www.w3.org/2000/svg'].btn-block, input[type='0 0 8 8'].btn-bl
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: "white;";
+    color: #fff;
     background-color: #3B7EEB
 }
 
