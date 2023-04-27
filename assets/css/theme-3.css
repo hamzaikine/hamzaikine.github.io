@@ -4001,7 +4001,6 @@ input[type='http://www.w3.org/2000/svg'].btn-block, input[type='0 0 8 8'].btn-bl
     content: '.5';
     background: no-repeat center center;
     background-size: 100% 100%
-    color: "white";
 }
 
 @media (max-width:575.98px) {
