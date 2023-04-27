@@ -3984,7 +3984,7 @@ input[type='http://www.w3.org/2000/svg'].btn-block, input[type='0 0 8 8'].btn-bl
     padding: .25rem .75rem;
     font-size: 1.25rem;
     line-height: 1;
-    background-color: transparent;
+    background-color: "white";
     border: 1px solid transparent;
     border-radius: .25rem
 }
