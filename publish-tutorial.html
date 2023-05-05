@@ -168,8 +168,21 @@ const dateElements = document.querySelectorAll('.date');
 		
 				    <h3 class="mt-5 mb-3 blog-list">Putting It All Together Your HTML and JavaScript Code Should Look Like This:</h3>
 				    <pre><code>
-				    	
+&lt;article&gt;
+   &lt;h2&gt;Article Title&lt;/h2&gt
+   &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+   &lt;span class="date"&gt;2023-05-05T02:30:00-04:00&lt;/span&gt;
+&lt;/article&gt;
 
+&lt;article&gt;
+   &lt;h2&gtAnother Article Title&lt;/h2&gt;
+   &lt;p&gtNulla facilisi. Curabitur tristique turpis in diam molestie dignissim.&lt;/p&gt;
+   &lt;span class="date"&gt;2023-05-02T02:30:00-04:00&lt;/span&gt;
+&lt;/article&gt;		
+
+&lt;!-- more articles with a similar structure --&gt;
+
+&lt;script&gt;
 function timeSincePost(postDate) {
   const currentDate = new Date();
   const timeDiff = Math.floor((currentDate - postDate) / 60000);
@@ -199,6 +212,7 @@ function timeSincePost(postDate) {
          dateElement.textContent = timeAgo;
   
        });
+&lt;/script&gt;       
 				    	 
 				    </code></pre>
 
