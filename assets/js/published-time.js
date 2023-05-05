@@ -1,6 +1,10 @@
 function timeSincePost(timeElapsed, postDate) {
   const oneDay = 24 * 60 * 60 * 1000; // One day in milliseconds
   const daysElapsed = Math.floor(timeElapsed / oneDay);
+
+  if (daysElapsed === 1){
+     return 'Yesterday';
+  }
   
   if (daysElapsed <= 7) {
     // Show the time elapsed
@@ -13,18 +17,19 @@ function timeSincePost(timeElapsed, postDate) {
 
     for (const unit of timeUnits) {
       const elapsed = Math.floor(timeElapsed / unit.value);
-      if (elapsed >= 1) {
-        return `${elapsed} ${unit.label}${elapsed > 1 ? 's' : ''} ago`;
+      if (elapsed > 1) {
+        return `Published ${elapsed} ${unit.label}${elapsed > 1 ? 's' : ''} ago`;
       }
     }
-    return 'Just now';
-  } else if (daysElapsed === 2) {
-         return 'Yesterday'
-  }else {
+   return 'Just now';
+  } 
+  else {
     // Show the actual published date
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return `Published on ${postDate.toLocaleDateString(undefined, options)}`;
   }
+
+   
 }
 
       const dateElements = document.querySelectorAll('.date');
