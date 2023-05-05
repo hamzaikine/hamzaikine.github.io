@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>How To Display Publish Dates As Time Since Posted Using HTML and JavaScript</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My thoughts and insights on the latest news in technology, sports, nutrition and nature">
+    <meta name="author" content="Hamza Ikine">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-3.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html"><em>Hamza Ikine</em></a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; font-size:28px;"></i></span><!-- fixes toggler icon stokes not showing -->
+				</button>
+
+
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >			
+					
+					<div class="bio mb-3">Hello, my name is Hamza Ikine. I am a software developer with a passion for sports, technology, nutrition and nature.<br><a href="about.html">Find out more about me</a></div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/hamzaikine"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://www.linkedin.com/in/hamzaikine"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/hamzaikine"><i class="fab fa-github-alt fa-fw"></i></a></li>
+
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i> Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				                 <!-- Dark mode toggle -->
+								<div class="one-quarter" id="switch">
+								  <input type="checkbox" class="checkbox" id="theme" />
+								  <label class="label" for="theme">
+								      <i class="fas fa-sun"></i>
+								      <i class="fas fa-moon"></i>
+								      <div class="ball"></div>
+								  </label>
+								</div>	
+				
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post  px-3 py-5 p-md-5 blog-list">
+		    <div class="container blog-list">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2 blog-list">How To Display Publish Dates Of Articles As Time Since Posted Using HTML and JavaScript </h2>
+				    <div class="mb-3"><span class="date">2023-05-05T02:30:00-04:00</span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="#"><img class="img-fluid" src="assets/images/blog/time-ago.jpeg" alt="image"></a>
+				    </figure>
+				    <h3 class="mt-5 mb-3 blog-list">Problem to Solve:</h3>
+				    <p>In this tutorial I will show you how to display the date of a published article as time since it was posted. Instead of showing a date, we will show the reader how much time passed since you posted your
+				    article.</p>
+
+                    <h3 class="mt-5 mb-3 blog-list">The Logic Will Be as Follow:</h3>
+				    <ul class="mb-5">
+					  <li class="mb-2">If only 1 minute has passed since the article was posted we will show "Published Just now".</li>
+					  <li class="mb-2">If the article was posted less than 60 minutes we will show "Published X minutes ago".</li>
+					  <li class="mb-2">If it was posted less than 24 hours we will show "Published X hours ago".</li>
+					  <li class="mb-2">If it was posted less than 48 hours we will show "Published Yesterday".</li>
+					  <li class="mb-2">And finally if it was published more than 48 hours we will show the actual published date.</li>
+					</ul>
+				    
+				    <h3 class="mt-5 mb-3 blog-list">Let's Show Our Readers Better Dates:</h3>
+				     <ol class="mb-5">
+				     	<li class="mb-2">In your HTML, add a date class to each element that displays the published date. For example:
+
+				     		<pre>
+				     		  <code class="hljs javascript">
+&lt;h2&gtArticle Title&lt;/h2&gt
+&lt;p&gtLorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt
+&lt;span class="date"&gt2023-05-05T02:30:00-04:00&lt;/span&gt
+
+
+
+&lt;h2&gtAnother Article Title&lt;/h2&gt
+&lt;p&gtNulla facilisi. Curabitur tristique turpis in diam molestie dignissim.&lt;/p&gt
+&lt;span class="date"&gt2023-05-02T02:30:00-04:00&lt;/span&gt
+
+
+				     	   </code>
+				        </pre>
+				     </li>
+				     <li class="mb-2">We create a function that takes in the published date as a parameter and returns a string with the appropriate units following our logic: 
+				     	<pre><code>
+
+function timeSincePost(postDate) {
+  const currentDate = new Date();
+  const timeDiff = Math.floor((currentDate - postDate) / 60000);
+
+  if (timeDiff < 1) {
+    return "Published Just now";
+  } else if (timeDiff < 60) {
+    return `Published ${timeDiff} minutes ago`;
+  } else if (timeDiff < 1440) {
+    const hoursAgo = Math.floor(timeDiff / 60);
+    return `Publlished ${hoursAgo} ${hoursAgo === 1 ? "hour" : "hours"} ago`;
+  } else if (timeDiff < 2880) {
+    return "Published Yesterday";
+  } else {
+    // Show the actual published date
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return `Published on ${postDate.toLocaleDateString(undefined, options)}`;
+  }
+}
+
+				     	</code></pre></li>
+
+				     	<li class="mb-2">We use the querySelectorAll method to select all articles with the date class: 
+				     		<pre><code>
+const dateElements = document.querySelectorAll('.date');
+				     		</code></pre>
+				     		</li>
+				     	<li class="mb-2"> Then, we loop through each article to calculate the time elapsed and update the text content:
+				     		<pre><code>
+ dateElements.forEach(dateElement => {
+         const postDate = new Date(dateElement.textContent);
+         const timeAgo = timeSincePost(postDate);
+         dateElement.textContent = timeAgo;
+  
+       });
+				     		</code></pre>
+
+				     	</li>
+				     	
+				     </ol>
+
+
+
+		
+				    <h3 class="mt-5 mb-3 blog-list">Putting It All Together Your HTML and JavaScript Code Should Look Like This:</h3>
+				    <pre><code>
+				    	
+
+function timeSincePost(postDate) {
+  const currentDate = new Date();
+  const timeDiff = Math.floor((currentDate - postDate) / 60000);
+
+  if (timeDiff < 1) {
+    return "Published Just now";
+  } else if (timeDiff < 60) {
+    return `Published ${timeDiff} minutes ago`;
+  } else if (timeDiff < 1440) {
+    const hoursAgo = Math.floor(timeDiff / 60);
+    return `Publlished ${hoursAgo} ${hoursAgo === 1 ? "hour" : "hours"} ago`;
+  } else if (timeDiff < 2880) {
+    return "Published Yesterday";
+  } else {
+    // Show the actual published date
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return `Published on ${postDate.toLocaleDateString(undefined, options)}`;
+  }
+}
+
+
+
+      const dateElements = document.querySelectorAll('.date');
+       dateElements.forEach(dateElement => {
+         const postDate = new Date(dateElement.textContent);
+         const timeAgo = timeSincePost(postDate);
+         dateElement.textContent = timeAgo;
+  
+       });
+				    	 
+				    </code></pre>
+
+				  
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="index.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog-list.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+								
+		    </div><!--//container-->
+	    </article>
+	    
+	      
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright"> 2023 &copy; Created with <i class="fas fa-heart" style="color: #fb866a;"></i> by Hamza Ikine</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+
+   
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+     <script src="assets/js/dark-mode.js"></script>
+     <script src="assets/js/published-time.js"></script>  
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+   
+
+</body>
+</html> 
+

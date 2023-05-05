@@ -1,42 +1,34 @@
-function timeSincePost(timeElapsed, postDate) {
-  const oneDay = 24 * 60 * 60 * 1000; // One day in milliseconds
-  const daysElapsed = Math.floor(timeElapsed / oneDay);
 
 
-  
-  if (daysElapsed === 1){
-     return 'Yesterday';
-  } else if (daysElapsed <= 7) {
-    // Show the time elapsed
-    const timeUnits = [
-      { label: 'day',    value: 24 * 60 * 60 * 1000 },
-      { label: 'hour',   value:      60 * 60 * 1000 },
-      { label: 'minute', value:           60 * 1000 },
-      { label: 'second', value:                1000 },
-    ];
 
-    for (const unit of timeUnits) {
-      const elapsed = Math.floor(timeElapsed / unit.value);
-      if (elapsed > 1) {
-        return `Published ${elapsed} ${unit.label}${elapsed > 1 ? 's' : ''} ago`;
-      }
-    }
-   return 'Just now';
-  } 
-  else {
+function timeSincePost(postDate) {
+  const currentDate = new Date();
+  const timeDiff = Math.floor((currentDate - postDate) / 60000);
+
+  if (timeDiff < 1) {
+    return "Published Just now";
+  } else if (timeDiff < 60) {
+    return `Published ${timeDiff} minutes ago`;
+  } else if (timeDiff < 1440) {
+    const hoursAgo = Math.floor(timeDiff / 60);
+    return `Publlished ${hoursAgo} ${hoursAgo === 1 ? "hour" : "hours"} ago`;
+  } else if (timeDiff < 2880) {
+    return "Published Yesterday";
+  } else {
     // Show the actual published date
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return `Published on ${postDate.toLocaleDateString(undefined, options)}`;
   }
-
-   
 }
+
+
 
       const dateElements = document.querySelectorAll('.date');
        dateElements.forEach(dateElement => {
          const postDate = new Date(dateElement.textContent);
-         const timeElapsed = Date.now() - postDate.getTime();
-         dateElement.textContent = timeSincePost(timeElapsed);
+         const timeAgo = timeSincePost(postDate);
+         dateElement.textContent = timeAgo;
+  
        });
 
  
