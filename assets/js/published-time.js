@@ -2,7 +2,7 @@ function timeSincePost(timeElapsed, postDate) {
   const oneDay = 24 * 60 * 60 * 1000; // One day in milliseconds
   const daysElapsed = Math.floor(timeElapsed / oneDay);
   
-  if (daysElapsed <= 1) {
+  if (daysElapsed <= 7) {
     // Show the time elapsed
     const timeUnits = [
       { label: 'day',    value: 24 * 60 * 60 * 1000 },
